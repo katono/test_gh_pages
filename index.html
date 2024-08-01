@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p>Add source and header files to your application source tree and add <code>mechanism</code> and <code>platform</code> directories to the include path.</p>
 <p>If you can use <a href="https://conan.io/">Conan</a> C++ package manager, execute these commands in this repo root directory to install <code>cppelib_mechanism</code> package and <code>cppelib_platform</code> package. </p><div class="fragment"><div class="line">conan create mechanism</div>
 <div class="line">conan create platform</div>
-</div><!-- fragment --><p>If you want these packages with C++ exception disabled, you can use <a href="tool/profiles/profile_noexceptions">tool/profiles/profile_noexceptions</a> to include in your conan profile. In that case, all your packages must use the same conan profile. See <a href="tool/build_package.sh">tool/build_package.sh</a> to know about how to use a sample conan profile.</p>
+</div><!-- fragment --><p>If you want these packages with C++ exception disabled, you can use <code>tool/profiles/profile_noexceptions</code> to include in your conan profile. In that case, all your packages must use the same conan profile. See <code>tool/build_package.sh</code> to know about how to use a sample conan profile.</p>
 <h1>Test</h1>
 <p>Tests of CppELib use <a href="http://cpputest.github.io/">CppUTest</a> because this testing framework is portable. Tests can be run on multi-platform: Visual Studio, g++, and your target platform.</p>
 <p>Execute these conan commands in this repo root directory to run tests.</p>
