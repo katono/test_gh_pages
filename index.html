@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>test: Main Page</title>
+<title>CppELib: CppELib</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">test<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">CppELib<span id="projectnumber">&#160;1.5.0</span>
    </div>
   </td>
  </tr>
@@ -88,10 +88,51 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">test Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">CppELib </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> CppELib is a portable C++ library for embedded software development. This works on the freestanding environment such as:</p><ul>
+<li>No standard C++ libraries</li>
+<li>Disabled exception-handling</li>
+</ul>
+<p><a href="https://github.com/katono/cppelib/actions/workflows/main.yml"><img src="https://github.com/katono/cppelib/actions/workflows/main.yml/badge.svg?branch=master" alt="CI" style="pointer-events: none;" class="inline"/></a> <a href="https://ci.appveyor.com/project/katono/cppelib/branch/master"><img src="https://ci.appveyor.com/api/projects/status/v2kqt2jvw8m7mija/branch/master?svg=true" alt="Build status" class="inline"/></a> <a href="https://coveralls.io/github/katono/cppelib?branch=master"><img src="https://coveralls.io/repos/github/katono/cppelib/badge.svg?branch=master" alt="Coverage Status" style="pointer-events: none;" class="inline"/></a></p>
+<h1>Description</h1>
+<p>CppELib provides these mechanisms:</p>
+<ul>
+<li><p class="startli"><a class="el" href="namespaceAssertion.html">Assertion</a></p>
+<p class="startli">This is used instead of standard <code>assert()</code> macro. If an assertion fails, you must handle to do shutdown your application safely. There are two assertion macros. <a class="el" href="Assertion_8h.html#a3214c24b52e397ba540c8c6487f411f9" title="Used instead of standard assert() macro for implementing Design by Contract.">CHECK_ASSERT()</a> is always enabled, <a class="el" href="Assertion_8h.html#aff8d3f9908bd5c90304b2adccda33ebe" title="The same as CHECK_ASSERT() macro.">DEBUG_ASSERT()</a> is enabled only when <code>NDEBUG</code> macro is not defined.</p>
+</li>
+<li><p class="startli"><a class="el" href="namespaceContainer.html">Container</a></p>
+<p class="startli">STL-like containers without dynamic memory allocation: fixed capacity vector, fixed capacity deque, intrusive list, etc.</p>
+</li>
+<li><p class="startli"><a class="el" href="namespaceOSWrapper.html" title="OSWrapper provides abstract C++ interface of common RTOS: thread, mutex, event flag,...">OSWrapper</a></p>
+<p class="startli">If you use a vendor's real-time operating system (RTOS), perhaps you can't use common class library like <code>std::thread</code>. <a class="el" href="namespaceOSWrapper.html" title="OSWrapper provides abstract C++ interface of common RTOS: thread, mutex, event flag,...">OSWrapper</a> provides abstract C++ interface of common RTOS: thread, mutex, event flag, message queue, memory pool, etc. This makes your application more portable and testable. And you can get a simulation environment for debug or test of your application on your host machine without the target board too (but real-time property may not be guaranteed). If the source files for your OS platform are not prepared in <code>platform</code> directory, you need to implement concrete classes of OS API wrapper. These concrete classes are only used for Dependency Injection as the application is initialized.</p>
+</li>
+</ul>
+<h1>Repository</h1>
+<p>You can get the latest version from here.</p>
+<p><a href="https://github.com/katono/cppelib">https://github.com/katono/cppelib</a></p>
+<h1>Documentation</h1>
+<p><a href="https://katono.github.io/cppelib-docs">https://katono.github.io/cppelib-docs</a></p>
+<h1>Requirements</h1>
+<ul>
+<li><code>mechanism</code>: C++98 or later (freestanding)</li>
+<li><code>platform</code> of Windows and POSIX: C++11 or later</li>
+</ul>
+<h1>Installation</h1>
+<p>Add source and header files to your application source tree and add <code>mechanism</code> and <code>platform</code> directories to the include path.</p>
+<p>If you can use <a href="https://conan.io/">Conan</a> C++ package manager, execute these commands in this repo root directory to install <code>cppelib_mechanism</code> package and <code>cppelib_platform</code> package. </p><div class="fragment"><div class="line">conan create mechanism</div>
+<div class="line">conan create platform</div>
+</div><!-- fragment --><p>If you want these packages with C++ exception disabled, you can use <a href="tool/profiles/profile_noexceptions">tool/profiles/profile_noexceptions</a> to include in your conan profile. In that case, all your packages must use the same conan profile. See <a href="tool/build_package.sh">tool/build_package.sh</a> to know about how to use a sample conan profile.</p>
+<h1>Test</h1>
+<p>Tests of CppELib use <a href="http://cpputest.github.io/">CppUTest</a> because this testing framework is portable. Tests can be run on multi-platform: Visual Studio, g++, and your target platform.</p>
+<p>Execute these conan commands in this repo root directory to run tests.</p>
+<div class="fragment"><div class="line">conan build mechanism/test --build=missing</div>
+<div class="line">conan build platform/test --build=missing</div>
+</div><!-- fragment --><h1>License</h1>
+<p>MIT License </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

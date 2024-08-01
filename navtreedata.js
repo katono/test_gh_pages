@@ -24,12 +24,35 @@
 */
 var NAVTREE =
 [
-  [ "test", "index.html", [
+  [ "CppELib", "index.html", [
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
+      ] ]
+    ] ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
+        [ "Related Symbols", "functions_rela.html", null ]
+      ] ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -37,7 +60,13 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"files.html"
+"Array_8h.html",
+"classContainer_1_1FixedDeque.html#a3546d4f6e81634606376bffea318211b",
+"classContainer_1_1FixedVector.html#afed26ec5f2c10fbba0aabe41bf2ee471",
+"classContainer_1_1PreallocatedDeque__iterator.html#a28bd1b4e3eaa66bee0ed6314635ab085",
+"classOSWrapper_1_1MessageQueue.html#a73a1dbb06cfc20908b588c8287250279",
+"classStdCppOSWrapper_1_1StdCppEventFlag.html",
+"classWindowsOSWrapper_1_1WindowsPeriodicTimer.html#af2dbcc55bda7dc17dba19d4932d36b72"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
